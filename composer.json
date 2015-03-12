@@ -1,6 +1,7 @@
 {
     "name": "yogirzlsinatrya/terbilang",
-    "description": "",
+    "description": "Merubah nominal rupiah menjadi kata",
+    "keywords": ["laravel", "terbilang", "rupiah"],
     "authors": [
         {
             "name": "Choirul Ummah",
