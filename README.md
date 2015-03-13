@@ -11,4 +11,4 @@ tambahkan providers pada app/config/app.php
 
 
 penggunaan
- echo Terbilang::konversi('1111111111111');
+ echo Terbilang::rupiah('1111111111111');
