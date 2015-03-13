@@ -13,8 +13,8 @@ class Terbilang{
 		return $hai;
 	}
 	
-	public function konversi($number)
-    {
+	public function rupiah($number)
+    	{
         $number = str_replace('.', '', $number);
         if ( ! is_numeric($number)) throw new NotNumbersException;
         $base    = array('Nol', 'Satu', 'Dua', 'Tiga', 'Empat', 'Lima', 'Enam', 'Tujuh', 'Delapan', 'Sembilan');
@@ -33,7 +33,7 @@ class Terbilang{
                 $count = (int)($number / $numeric[$i]);
                 if ($count >= 10)
                 {
-                    $str .= static::konversi($count) . ' ' . $unit[$i] . ' ';
+                    $str .= static::rupiah($count) . ' ' . $unit[$i] . ' ';
                 }
                 elseif ($count > 0 && $count < 10)
                 {
