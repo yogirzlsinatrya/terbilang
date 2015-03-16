@@ -13,7 +13,20 @@ class Terbilang{
 		return $hai;
 	}
 	
-	public function rupiah($number)
+	public function rupiah($nominal)
+    	{
+        if (strpos($nominal, '.') > 0){
+            $nilai = static::konversi(strstr($nominal, '.', true));
+            $koma = static::tkoma(strstr($nominal, '.'));
+        }
+        else{
+            $nilai = static::konversi($nominal);
+            $koma = "";
+        }
+        return $nilai . " " . $koma;
+    	}
+	
+	public function konversi($number)
     	{
         $number = str_replace('.', '', $number);
         if ( ! is_numeric($number)) throw new NotNumbersException;
@@ -33,7 +46,7 @@ class Terbilang{
                 $count = (int)($number / $numeric[$i]);
                 if ($count >= 10)
                 {
-                    $str .= static::rupiah($count) . ' ' . $unit[$i] . ' ';
+                    $str .= static::konversi($count) . ' ' . $unit[$i] . ' ';
                 }
                 elseif ($count > 0 && $count < 10)
                 {
@@ -50,6 +63,20 @@ class Terbilang{
             $str = preg_replace('/\s{2,}/', ' ', trim($str));
         }
         return $str;
-    }
+    	}
+    	public function tkoma($nominal)
+    	{
+        $base = array('Nol', 'Satu', 'Dua', 'Tiga', 'Empat', 'Lima', 'Enam', 'Tujuh', 'Delapan', 'Sembilan');
+
+        $temp = "Koma";
+        $pjg = strlen($nominal);
+        $pos = 1;
+        while ($pos < $pjg) {
+            $x = substr($nominal, $pos, 1);
+            $pos++;
+            $temp .= " " . $base[$x];
+        }
+        return $temp;
+    	}
 
 }
