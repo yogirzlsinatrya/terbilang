@@ -13,6 +13,17 @@ class Terbilang{
 		return $hai;
 	}
 	
+	/**
+	 * Memformat suatu angka menjadi format yang umum digunakan dalam penulisan nominal rupiah
+	 * 
+	 * @param 	float 	nilai rupiah
+	 * @return 	string
+	 */
+	public function format($nominal, $sign = 'Rp. ', $end = ',-', $presisi = 0)
+	{
+		return $sign.number_format($nominal, $presisi, ',', '.').$end;
+	}
+	
 	public function rupiah($nominal)
     	{
         if (strpos($nominal, '.') > 0){
