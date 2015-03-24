@@ -24,9 +24,9 @@ class Terbilang{
 		return $sign.number_format($nominal, $presisi, ',', '.').$end;
 	}
 	
-	public function format_no_sign($nominal, $sign = '', $end = ',-', $presisi = 0)
+	public function format_no_sign($nominal, $end = ',-', $presisi = 0)
 	{
-		return $sign.number_format($nominal, $presisi, ',', '.').$end;
+		return number_format($nominal, $presisi, ',', '.').$end;
 	}
 	
 	public function rupiah($nominal)
