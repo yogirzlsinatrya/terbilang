@@ -13,6 +13,11 @@ class Terbilang {
         return $hai;
     }
 
+    public function test_git() {
+        $hai = "haiiii";
+        return $hai;
+    }
+
     /**
      * Memformat suatu angka menjadi format yang umum digunakan dalam penulisan nominal rupiah
      * 
