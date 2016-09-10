@@ -4,20 +4,6 @@ namespace Yogirzlsinatrya\Terbilang;
 
 class Terbilang {
 
-    public function greeting() {
-        return "What up dawg";
-    }
-
-    public function test() {
-        $hai = "haiiii";
-        return $hai;
-    }
-
-    public function test_git() {
-        $hai = "haiiii";
-        return $hai;
-    }
-
     /**
      * Memformat suatu angka menjadi format yang umum digunakan dalam penulisan nominal rupiah
      * 
